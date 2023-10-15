@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+@font-face {
+    font-family: child;
+    src: url(/cookie-clicker/res/img/ChildsHandwriting-8AX2.ttf);
+  }
+
+body {
+    font-family: child;
+    overflow: hidden;
+    font-weight: 900;
+}
+*{
+    user-select: none;
+}
+#cookie{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: scale(1.00);
+    transition: 300ms ease;
+    width: 35vh;
+    height: 27vh;
+    border: 5px solid cyan;
+
+}
+#cookie:hover{
+    transform: scale(1.05);
+    transition: 300ms ease;
+    cursor: pointer;
+}
+#cookie:active{
+    transform: scale(1.00);
+   
+}
+#counter{
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 0;
+    color: aliceblue;
+    font-weight: 1000;
+
+    
+}
+#clickuUpgrade{
+    color: white; 
+    display: block;
+    border-radius: 1rem;
+    border: 5px gray solid;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 3rem;
+
+    
+}
+#autoclickerUpgrade{
+    color: white; 
+    display: block;
+    border-radius: 1rem;
+    border: 5px gray solid;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#autoclickerUpgradeText{
+    font-size: 2rem;
+    margin-top: 0rem;
+    margin: 0;
+
+    
+}
+#levelOfAutoclickerText{
+    font-size: 1.75rem;
+    margin-top: 0.25rem;
+    margin: 0;
+}
+
+#zealtext{
+    font-size: 2rem;
+    margin-top: 0.25rem;
+    margin: 0;
+
+    
+}
+.zealtextwo{
+    margin: 0;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin: 0;
+}
+#levelOfClickUpgradeText{
+    font-size: 1.75rem;
+    margin-top: 0rem;
+    margin: 0;
+
+}
+
+
+
+#autoclickerUpgrade{
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#cookiec{
+    width: 80%;
+    height: 100%;
+}
+
+#shop{
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 5px black solid;
+    border-radius: 5px;
+
+}
+.shopText{
+    width: 100%;
+    height: auto;
+    font-size: 12rem;
+    text-align: center;
+    color: rgb(0, 255, 42);
+    font-weight: 1300;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#autoclickerUpgrade{
+    font-size: 105%;
+    background-color: midnightblue;
+    color: white; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 300ms ease;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+#autoclickerUpgrade:hover{
+    transform: scale(1.05);
+    transition: 300ms ease;
+    cursor: pointer;
+}
+#autoclickerUpgrade:active{
+    transform: scale(1.00);
+   
+}
+*/
