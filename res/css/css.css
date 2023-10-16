@@ -2,9 +2,8 @@
 
 @font-face {
     font-family: child;
-    src: url(/res/img/ChildsHandwriting-8AX2.ttf);
+    src: url(/res/fonts/ChildsHandwriting-8AX2.ttf);
   }
-
 body {
     font-family: child;
     overflow: hidden;
