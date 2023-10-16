@@ -143,12 +143,12 @@ const lightsFunction = () => {
 
         colorLights.innerText = "Zeleny svetlo: " + lightsCost;
         lightsAfter();
-        document.body.style.backgroundImage = "url(res/img/yellow.png)";
+        document.body.style.backgroundImage = "url(./res/img/yellow.png)";
 
     } else if (numberOfCookies >= lightsCost && levelOfLights == 1) {
 
         colorLights.innerText = "Prejit silnici: " + lightsCost;
-        document.body.style.backgroundImage = "url(res/img/green.png)";
+        document.body.style.backgroundImage = "url(./res/img/green.png)";
 
         lightsAfter();
 
