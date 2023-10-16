@@ -12,16 +12,9 @@ const levelOfLightsText = document.getElementById("levelOfLights")
 const homelessMf = document.getElementById("homelessMf")
 const levelOfHomelessMfText = document.getElementById("levelOfHomelessMf")
 
-
-
-
 let numberOfCookies = 0;
 let costOfClickUpgrade = 20;
-
-
 let levelOfClickUpgrade = 0;
-
-
 let levelOfAutoclicker = 0;
 let clickUpgradeIncrease = 1;
 let autoclickIncrease = 0;
@@ -32,19 +25,12 @@ let levelOfLights = 0;
 let levelOfHomelessMf = 0;
 let homelessMfCost = 4444;
 
-
-
-
-
-
 window.onload =
 canBuyClickUpgrade();
 canBuyAutoclicker();
 canBuyLights();
 canBuyHomelessMf(); 
 // pane uciteli jestli se divate na kod tak se omlouvam
-
-
 
 
 cookie.onclick = () => {
@@ -87,16 +73,10 @@ const clickUpgradeFunction = () => {
         canBuyClickUpgrade();
         canBuyAutoclicker();
         canBuyLights();
-        canBuyHomelessMf();
-
-
-
-                            
+        canBuyHomelessMf(); 
     }
 }
 clickUpgrade.onclick = clickUpgradeFunction
-
-
 
 
 
