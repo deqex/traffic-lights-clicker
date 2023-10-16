@@ -61,7 +61,6 @@ body {
     border: 5px gray solid;
     cursor: pointer;
     text-align: center;
-    margin-top: 1rem;
     background-color: rgba(0, 0, 0, 0.5);
 }
 #autoclickerUpgradeText{
@@ -130,9 +129,26 @@ body {
     color: rgb(0, 255, 42);
     font-weight: 1300;
 }
-
-
-
+#lights{
+    color: white; 
+    display: block;
+    border-radius: 1rem;
+    border: 5px gray solid;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#colorLights{
+    font-size: 2rem;
+    margin-top: 0.25rem;
+    margin: 0;
+}
+#levelOfLights{
+    font-size: 1.75rem;
+    margin-top: 0.25rem;
+    margin: 0;
+}
 
 
 

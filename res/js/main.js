@@ -6,6 +6,9 @@ const levelOfClickUpgradeText = document.getElementById("levelOfClickUpgradeText
 const levelOfAutoclickerText = document.getElementById("levelOfAutoclickerText")
 const clickUpgradeText = document.getElementById("zealtext")
 const autoclickerUpgradeText = document.getElementById("autoclickerUpgradeText")
+const lights = document.getElementById("lights")
+const colorLights = document.getElementById("colorLights")
+const levelOfLightsText = document.getElementById("levelOfLights")
 
 
 
@@ -21,6 +24,8 @@ let clickUpgradeIncrease = 1;
 let autoclickIncrease = 0;
 let autoclicker
 let autoclickerCost = 100;
+let lightsCost = 1000;
+let levelOfLights = 0;
 
 
 
@@ -30,6 +35,7 @@ let autoclickerCost = 100;
 window.onload =
 canBuyClickUpgrade();
 canBuyAutoclicker();
+canBuyLights();
 
 
 
@@ -40,6 +46,8 @@ cookie.onclick = () => {
     counter.innerHTML = "Pocet zmacknuti: " + numberOfCookies;
     canBuyClickUpgrade();
     canBuyAutoclicker();
+    canBuyLights();
+
 }
 
 function cheats() {
@@ -67,6 +75,8 @@ const clickUpgradeFunction = () => {
 
         canBuyClickUpgrade();
         canBuyAutoclicker();
+        canBuyLights();
+
 
 
                             
@@ -92,6 +102,8 @@ const autoclickerUpgradeFunction = () => {
 
         canBuyClickUpgrade();
         canBuyAutoclicker();
+        canBuyLights();
+
 
 
 
@@ -101,6 +113,8 @@ const autoclickerUpgradeFunction = () => {
             counter.innerText = "Pocet zmacknuti: " + numberOfCookies;
             canBuyClickUpgrade();
             canBuyAutoclicker();
+            canBuyLights();
+
 
 
 
@@ -112,6 +126,47 @@ autoclickerUpgrade.onclick = autoclickerUpgradeFunction
 
 
 
+function lightsAfter() {
+    numberOfCookies -= lightsCost;
+    lightsCost += 1000;
+    levelOfLights ++;
+    levelOfLightsText.innerHTML = "Level: " + levelOfLights;
+    counter.innerText = "Pocet zmacknuti: " + Math. round(numberOfCookies);
+    canBuyClickUpgrade();
+    canBuyAutoclicker();
+    canBuyLights();
+
+}
+
+const lightsFunction = () => {
+    if (numberOfCookies >= lightsCost && levelOfLights == 0) {
+
+        colorLights.innerText = "Zeleny svetlo: " + lightsCost;
+        lightsAfter();
+        document.body.style.backgroundImage = "url('/res/img/yellow.png')";
+
+    } else if (numberOfCookies >= lightsCost && levelOfLights == 1) {
+
+        colorLights.innerText = "Prejit silnici: " + lightsCost;
+        document.body.style.backgroundImage = "url('/res/img/green.png')";
+
+        lightsAfter();
+
+
+
+    } else if (numberOfCookies >= lightsCost && levelOfLights == 2) {
+        numberOfCookies -= lightsCost;
+        colorLights.innerText = "Semafor";
+        levelOfLights ++;
+        levelOfLightsText.innerHTML = "Level: Max";
+        counter.innerText = "Pocet zmacknuti: " + Math. round(numberOfCookies);
+        document.getElementById("lights").style.borderColor = "black";
+
+    }
+}
+
+
+lights.onclick = lightsFunction
 
 
 
@@ -130,10 +185,7 @@ autoclickerUpgrade.onclick = autoclickerUpgradeFunction
 
 
 
-
-
-
-
+cheats();
 
 
 
@@ -155,6 +207,17 @@ function canBuyAutoclicker() {
         document.getElementById("autoclickerUpgrade").style.borderColor  = "white";
     } else {
         document.getElementById("autoclickerUpgrade").style.borderColor = "black";
+    
+    }
+}
+
+function canBuyLights() { 
+    if (levelOfLights == 3) {
+        document.getElementById("lights").style.borderColor = "black";
+    } else if (numberOfCookies >= lightsCost) {
+        document.getElementById("lights").style.borderColor  = "white";
+    } else {
+        document.getElementById("lights").style.borderColor = "black";
     
     }
 }
