@@ -9,6 +9,9 @@ const autoclickerUpgradeText = document.getElementById("autoclickerUpgradeText")
 const lights = document.getElementById("lights")
 const colorLights = document.getElementById("colorLights")
 const levelOfLightsText = document.getElementById("levelOfLights")
+const homelessMf = document.getElementById("homelessMf")
+const levelOfHomelessMfText = document.getElementById("levelOfHomelessMf")
+
 
 
 
@@ -26,6 +29,8 @@ let autoclicker
 let autoclickerCost = 100;
 let lightsCost = 1000;
 let levelOfLights = 0;
+let levelOfHomelessMf = 0;
+let homelessMfCost = 4444;
 
 
 
@@ -36,6 +41,9 @@ window.onload =
 canBuyClickUpgrade();
 canBuyAutoclicker();
 canBuyLights();
+canBuyHomelessMf(); 
+// pane uciteli jestli se divate na kod tak se omlouvam
+
 
 
 
@@ -47,6 +55,9 @@ cookie.onclick = () => {
     canBuyClickUpgrade();
     canBuyAutoclicker();
     canBuyLights();
+    canBuyHomelessMf();
+    // pane uciteli jestli se divate na kod tak se omlouvam
+
 
 }
 
@@ -63,7 +74,7 @@ const cheatsTwo = () => {
 const clickUpgradeFunction = () => {
     if (numberOfCookies >= costOfClickUpgrade) {
         numberOfCookies -= Math. round(costOfClickUpgrade) ;
-        costOfClickUpgrade *= 1.5;
+        costOfClickUpgrade *= 1.25;
         counter.innerText = "Pocet zmacknuti: " + Math. round(numberOfCookies);
         clickUpgradeIncrease ++;
         clickUpgradeText.innerHTML = "Ruka navic: " + Math. round(costOfClickUpgrade);
@@ -76,6 +87,7 @@ const clickUpgradeFunction = () => {
         canBuyClickUpgrade();
         canBuyAutoclicker();
         canBuyLights();
+        canBuyHomelessMf();
 
 
 
@@ -92,7 +104,7 @@ clickUpgrade.onclick = clickUpgradeFunction
 const autoclickerUpgradeFunction = () => {
     if (numberOfCookies >= autoclickerCost) {
         numberOfCookies -= Math. round(autoclickerCost);
-        autoclickerCost *= 1.2;
+        autoclickerCost *= 1.1;
         autoclickerUpgradeText.innerText = "Clovek navic: " + Math. round(autoclickerCost);
         counter.innerText = "Pocet zmacknuti: " + numberOfCookies;
         autoclickIncrease++;
@@ -103,6 +115,7 @@ const autoclickerUpgradeFunction = () => {
         canBuyClickUpgrade();
         canBuyAutoclicker();
         canBuyLights();
+        canBuyHomelessMf();
 
 
 
@@ -114,6 +127,7 @@ const autoclickerUpgradeFunction = () => {
             canBuyClickUpgrade();
             canBuyAutoclicker();
             canBuyLights();
+            canBuyHomelessMf();
 
 
 
@@ -124,8 +138,6 @@ const autoclickerUpgradeFunction = () => {
 
 autoclickerUpgrade.onclick = autoclickerUpgradeFunction
 
-
-
 function lightsAfter() {
     numberOfCookies -= lightsCost;
     lightsCost += 1000;
@@ -135,7 +147,7 @@ function lightsAfter() {
     canBuyClickUpgrade();
     canBuyAutoclicker();
     canBuyLights();
-
+    canBuyHomelessMf();
 }
 
 const lightsFunction = () => {
@@ -161,35 +173,59 @@ const lightsFunction = () => {
         levelOfLightsText.innerHTML = "Level: Max";
         counter.innerText = "Pocet zmacknuti: " + Math. round(numberOfCookies);
         document.getElementById("lights").style.borderColor = "black";
+        canBuyHomelessMf();
+
 
     }
 }
 
-
 lights.onclick = lightsFunction
 
 
+function homelessMfAfter() {
+        numberOfCookies -= homelessMfCost;
+        counter.innerText = "Pocet zmacknuti: " + numberOfCookies;
+        levelOfHomelessMf ++;
+        levelOfHomelessMfText.innerHTML = "Level: " + levelOfHomelessMf;  
+        canBuyHomelessMf();
+
+}
+
+const homelessMfFunction = () => {
+    if (numberOfCookies >= homelessMfCost && levelOfHomelessMf == 0 && levelOfLights == 3) {
+        homelessMfAfter();
+        alert("Dal jsi bezdakovy drobny.");
+    } else if (numberOfCookies >= homelessMfCost && levelOfHomelessMf == 1 && levelOfLights == 3) {
+        homelessMfAfter();
+        alert("Bezdak uz neni ohladu kvuli tobe.");
+    } else if (numberOfCookies >= homelessMfCost && levelOfHomelessMf == 2 && levelOfLights == 3) {
+        homelessMfAfter();
+        alert("Bezdak uz ma barak poggers.");
+        document.body.style.backgroundImage = "url(./res/img/bezmateje.png)";
+
+    } else if (numberOfCookies >= homelessMfCost && levelOfHomelessMf == 3 && levelOfLights == 3) {
+        homelessMfAfter();
+        alert("Bezdak zacal gamblit a...");
+    } else if (numberOfCookies >= homelessMfCost && levelOfHomelessMf == 4 && levelOfLights == 3) {
+        homelessMfAfter();
+        alert("Prohral skoro vsechno co vlastnil lmao noobak XDDD");
+        document.body.style.backgroundImage = "url(./res/img/green.png)";
+    } else if (numberOfCookies >= homelessMfCost && levelOfHomelessMf > 4 && levelOfLights == 3) {
+        homelessMfAfter();
+        alert("Davas mu penize zbytecne, dluzi az moc");
+    }
+}
+
+homelessMf.onclick = homelessMfFunction
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-cheats();
 
 
 
 // mozna pak dej do jedny funkce VVVVVVV
+
+// nedam je 11 vecer 
 
 function canBuyClickUpgrade() {
     if (numberOfCookies >= costOfClickUpgrade) {
@@ -222,51 +258,15 @@ function canBuyLights() {
     }
 }
 
+function canBuyHomelessMf() {
+if (numberOfCookies >= homelessMfCost && levelOfLights == 3) {
+        document.getElementById("homelessMf").style.borderColor  = "white";
+    } else {
+        document.getElementById("homelessMf").style.borderColor = "black";
+    
+    }
+}
+
 
 // mozna pak dej do jedny funkce ^^^^^^^^^
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function gfg() { 
-    document.body.style.backgroundColor = "red";
-    document.body.style.backgroundColor = "green";
-
-} 
-
-gfg(); 
-setInterval(gfg, 3000); 
-*/

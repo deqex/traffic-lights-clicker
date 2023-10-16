@@ -148,6 +148,26 @@ body {
     margin-top: 0.25rem;
     margin: 0;
 }
+#homelessMf{
+    color: white; 
+    display: block;
+    border-radius: 1rem;
+    border: 5px gray solid;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.25rem;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+#homelessMfText{
+    font-size: 2rem;
+    margin-top: 0.25rem;
+    margin: 0;
+}
+#levelOfHomelessMf{
+    font-size: 1.75rem;
+    margin-top: 0.25rem;
+    margin: 0;
+}
 
 
 
