@@ -133,13 +133,13 @@ function lightsAfter() {
 const lightsFunction = () => {
     if (numberOfCookies >= lightsCost && levelOfLights == 0) {
 
-        colorLights.innerText = "Zeleny svetlo: " + lightsCost;
+        colorLights.innerText = "Zeleny svetlo: 2000";
         lightsAfter();
         document.body.style.backgroundImage = "url(./res/img/yellow.png)";
 
     } else if (numberOfCookies >= lightsCost && levelOfLights == 1) {
 
-        colorLights.innerText = "Prejit silnici: " + lightsCost;
+        colorLights.innerText = "Prejit silnici: 3000";
         document.body.style.backgroundImage = "url(./res/img/green.png)";
 
         lightsAfter();
